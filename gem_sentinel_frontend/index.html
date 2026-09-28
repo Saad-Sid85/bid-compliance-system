@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gem Sentinel — Compliance Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <section id="landing" class="screen landing-screen">
+    <nav class="landing-nav">
+      <div class="brand">
+        <div class="brand-mark">GS</div>
+        <div><strong>GEM SENTINEL</strong><span>Bid Compliance Intelligence</span></div>
+      </div>
+      <button class="ghost-btn" onclick="showLogin()">Sign in</button>
+    </nav>
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> PROCUREMENT COMPLIANCE PLATFORM</div>
+        <h1>Turn complex bids into <em>clear decisions.</em></h1>
+        <p>One workspace for GeM-style bid management, document verification, automated compliance checks and evidence-backed review.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" onclick="showLogin()">Open workspace <span>→</span></button>
+          <button class="text-btn" onclick="showLogin('reviewer')">Explore reviewer view</button>
+        </div>
+        <div class="trust-row"><span>✓ Document intelligence</span><span>✓ Evidence traceability</span><span>✓ Audit ready</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card top">
+          <span class="mini-label">LIVE COMPLIANCE</span>
+          <strong>92<span>%</span></strong>
+          <div class="mini-bar"><i style="width:92%"></i></div>
+          <small>3 of 4 requirements cleared</small>
+        </div>
+        <div class="dashboard-preview">
+          <div class="preview-top"><span>Bid overview</span><span class="green-dot">● Live</span></div>
+          <div class="preview-score"><div class="ring">92%</div><div><b>GEM/2026/B/123456</b><small>Supply of Computer Systems</small></div></div>
+          <div class="preview-line"><span>GST registration</span><b>✓ Compliant</b></div>
+          <div class="preview-line"><span>Udyam registration</span><b>✓ Compliant</b></div>
+          <div class="preview-line"><span>Annual turnover</span><b>✓ Compliant</b></div>
+          <div class="preview-line warn"><span>Technical documents</span><b>Review</b></div>
+        </div>
+        <div class="floating-card bottom"><span class="doc-icon">✓</span><div><b>Evidence verified</b><small>GST Certificate · Page 1</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="login" class="screen login-screen hidden">
+    <div class="login-card">
+      <button class="back-btn" onclick="showLanding()">← Back</button>
+      <div class="brand center"><div class="brand-mark">GS</div><div><strong>GEM SENTINEL</strong><span>Secure workspace</span></div></div>
+      <h2>Welcome back</h2>
+      <p class="muted">Choose your workspace to continue.</p>
+      <div class="role-cards">
+        <button class="role-card active" id="roleBidder" onclick="selectRole('bidder')"><span class="role-icon">B</span><div><b>Bidder</b><small>Manage bids & documents</small></div><i>→</i></button>
+        <button class="role-card" id="roleReviewer" onclick="selectRole('reviewer')"><span class="role-icon reviewer">R</span><div><b>Reviewer</b><small>Review compliance & bids</small></div><i>→</i></button>
+      </div>
+      <button class="primary-btn full" onclick="enterApp()">Continue to dashboard <span>→</span></button>
+      <div class="demo-note">Demo mode · No real GeM credentials required</div>
+    </div>
+  </section>
+
+  <section id="app" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand side-brand"><div class="brand-mark">GS</div><div><strong>GEM SENTINEL</strong><span>Compliance OS</span></div></div>
+      <div id="sideNav"></div>
+      <div class="sidebar-bottom">
+        <div class="secure"><span>●</span> Local secure mode</div>
+        <button class="profile-mini" onclick="showToast('Profile settings are ready for backend connection.')"><span class="avatar">JD</span><div><b id="profileName">Jhanvi Dwivedi</b><small id="profileRole">Reviewer</small></div><span>•••</span></button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+        <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="pageTitle">Dashboard</strong></div>
+        <div class="top-actions"><button class="icon-btn" onclick="showToast('No new notifications.')">♧<span class="notif"></span></button><button class="help-btn" onclick="showToast('Help center connected in production.')">?</button></div>
+      </header>
+      <div id="pageContent"></div>
+    </main>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
