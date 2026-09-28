@@ -375,8 +375,14 @@ function showToast(msg){
     window.__toast=setTimeout(()=>t.classList.remove("show"),2500)
 }
 
-function toggleSidebar(){
-    $(".sidebar").classList.toggle("open")
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.toggle("open");
 }
 
 window.addEventListener("popstate", function(event) {
