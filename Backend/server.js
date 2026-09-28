@@ -470,7 +470,7 @@ app.get("/api/bids/:id/documents", async (req, res) => {
                 document_type,
                 file_path,
                 processing_status,
-                uploaded_at
+                upload_date
             FROM bid_documents
             WHERE bid_id = ?
             ORDER BY document_id DESC
